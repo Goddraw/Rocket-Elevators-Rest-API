@@ -101,7 +101,7 @@ namespace RocketElevatorsApi.Controllers
 
         // POST: api/batteries/Status/1?status=offline
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost("status/{id}")]
+        [HttpPut("status/{id}")]
         public async Task<ActionResult<Battery>> ChangeBatteryStatus(long id, string status)
         {
 

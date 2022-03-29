@@ -73,7 +73,6 @@ namespace RocketElevatorsApi.Controllers
             return elevator;
         }
 
-
         // PUT: api/elevators/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
@@ -103,6 +102,20 @@ namespace RocketElevatorsApi.Controllers
             }
 
             return NoContent();
+        }
+
+         // GET: api/elevators/offline
+        [HttpGet("offline")]
+        public async Task<ActionResult<IEnumerable<Elevator>>> GetOfflineElevators()
+        {
+            List<Elevator> allElevators = await _context.elevators.ToListAsync();
+            List<Elevator> offlineElevators = new List<Elevator>();
+            foreach (Elevator elevator in allElevators) {
+                if (elevator.Status == "offline") {
+                    offlineElevators.Add(elevator);
+                }
+            }
+            return offlineElevators;
         }
 
         // POST: api/elevators
