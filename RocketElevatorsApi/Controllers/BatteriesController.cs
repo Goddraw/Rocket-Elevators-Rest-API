@@ -29,6 +29,21 @@ namespace RocketElevatorsApi.Controllers
             return await _context.batteries.ToListAsync();
         }
 
+        // GET: api/Battery
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Battery>>> GetBatteryWithIntervention()
+        {
+
+             List<Elevator> allElevators = await _context.elevators.ToListAsync();
+            List<Elevator> offlineElevators = new List<Elevator>();
+            foreach (Elevator elevator in allElevators) {
+                if (elevator.Status == "offline") {
+                    offlineElevators.Add(elevator);
+                }
+            }
+            return await _context.batteries.ToListAsync();
+        }
+
         // GET: api/batteries/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Battery>> GetBattery(long id)
@@ -101,7 +116,7 @@ namespace RocketElevatorsApi.Controllers
 
         // POST: api/batteries/Status/1?status=offline
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost("status/{id}")]
+        [HttpPut("status/{id}")]
         public async Task<ActionResult<Battery>> ChangeBatteryStatus(long id, string status)
         {
 

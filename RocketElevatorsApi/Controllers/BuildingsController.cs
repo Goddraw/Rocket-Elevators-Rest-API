@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RocketElevatorsApi.Data;
+using RocketElevatorsApi.Models;
 
 namespace RocketElevatorsApi.Controllers
 {
@@ -27,6 +28,26 @@ namespace RocketElevatorsApi.Controllers
         {
             return await _context.buildings.ToListAsync();
         }
+
+        // GET: api/Buildings/intervention
+        [HttpGet("intervention")]
+        public async Task<ActionResult<IEnumerable<Building>>> GetBuildingsWithIntervention()
+        {
+            List<Building> allBuildings = await _context.buildings.ToListAsync();
+            List<Battery> allBatteries = await _context.batteries.ToListAsync();
+            List<Elevator> allElevators = await _context.elevators.ToListAsync();
+            List<Columns> allColumns = await _context.columns.ToListAsync();
+            List<Elevator> buildingsWithInterventions = new List<Elevator>();
+            
+            foreach (Building building in allBuildings) {
+                if (elevator.Status == "offline") {
+                    offlineElevators.Add(elevator);
+                }
+            }
+            return await _context.buildings.ToListAsync();
+        }
+
+
 
         // GET: api/Buildings/5
         [HttpGet("{id}")]
