@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/eileenai/Documents/codeboxx/odyssey/week7-restAPIs/Rocket-Elevators-Rest-API/RocketElevatorsApi/RocketElevatorsApi.csproj": {}
+    "/home/goddraw/odysseyweek7/Rocket-Elevators-Rest-API/RocketElevatorsApi/RocketElevatorsApi.csproj": {}
   },
   "projects": {
-    "/Users/eileenai/Documents/codeboxx/odyssey/week7-restAPIs/Rocket-Elevators-Rest-API/RocketElevatorsApi/RocketElevatorsApi.csproj": {
+    "/home/goddraw/odysseyweek7/Rocket-Elevators-Rest-API/RocketElevatorsApi/RocketElevatorsApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/eileenai/Documents/codeboxx/odyssey/week7-restAPIs/Rocket-Elevators-Rest-API/RocketElevatorsApi/RocketElevatorsApi.csproj",
+        "projectUniqueName": "/home/goddraw/odysseyweek7/Rocket-Elevators-Rest-API/RocketElevatorsApi/RocketElevatorsApi.csproj",
         "projectName": "RocketElevatorsApi",
-        "projectPath": "/Users/eileenai/Documents/codeboxx/odyssey/week7-restAPIs/Rocket-Elevators-Rest-API/RocketElevatorsApi/RocketElevatorsApi.csproj",
-        "packagesPath": "/Users/eileenai/.nuget/packages/",
-        "outputPath": "/Users/eileenai/Documents/codeboxx/odyssey/week7-restAPIs/Rocket-Elevators-Rest-API/RocketElevatorsApi/obj/",
+        "projectPath": "/home/goddraw/odysseyweek7/Rocket-Elevators-Rest-API/RocketElevatorsApi/RocketElevatorsApi.csproj",
+        "packagesPath": "/home/goddraw/.nuget/packages/",
+        "outputPath": "/home/goddraw/odysseyweek7/Rocket-Elevators-Rest-API/RocketElevatorsApi/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/eileenai/.nuget/NuGet/NuGet.Config"
+          "/home/goddraw/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -83,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.200/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
         }
       }
     }
