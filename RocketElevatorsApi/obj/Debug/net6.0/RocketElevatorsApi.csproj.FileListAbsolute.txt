@@ -262,3 +262,5 @@
 /Users/eileenai/Documents/codeboxx/odyssey/week7-restAPIs/Rocket-Elevators-Rest-API/RocketElevatorsApi/obj/Debug/net6.0/RocketElevatorsApi.pdb
 /Users/eileenai/Documents/codeboxx/odyssey/week7-restAPIs/Rocket-Elevators-Rest-API/RocketElevatorsApi/obj/Debug/net6.0/RocketElevatorsApi.genruntimeconfig.cache
 /Users/eileenai/Documents/codeboxx/odyssey/week7-restAPIs/Rocket-Elevators-Rest-API/RocketElevatorsApi/obj/Debug/net6.0/ref/RocketElevatorsApi.dll
+/Users/eileenai/Documents/codeboxx/odyssey/week7-restAPIs/Rocket-Elevators-Rest-API/RocketElevatorsApi/bin/Debug/net6.0/MySqlConnector.dll
+/Users/eileenai/Documents/codeboxx/odyssey/week7-restAPIs/Rocket-Elevators-Rest-API/RocketElevatorsApi/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
