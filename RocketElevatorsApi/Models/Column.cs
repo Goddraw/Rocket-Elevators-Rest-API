@@ -8,6 +8,7 @@ namespace RocketElevatorsApi.Models
         public string? status { get; set; }
         public string? information { get; set; }
         public string? notes { get; set; }
+        public long battery_id { get; set; }
         
     }
 }
