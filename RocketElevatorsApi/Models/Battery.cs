@@ -9,6 +9,10 @@ namespace RocketElevatorsApi.Models
         public string? certificate_of_operations { get; set; }
         public string? information { get; set; }
         public string? notes { get; set; }
+        public long? building_id {get; set;}
+        public long? employee_id {get; set;}
+
+
         
     }
 }
