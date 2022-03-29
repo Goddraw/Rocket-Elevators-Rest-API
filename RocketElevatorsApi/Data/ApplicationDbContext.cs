@@ -14,5 +14,6 @@ namespace RocketElevatorsApi.Data
         public DbSet<Battery> batteries { get; set; }
         public DbSet<Elevator> elevators { get; set; }
         public DbSet<Building> buildings { get; set; }
+        public DbSet<Column> columns { get; set; }
     }
 }

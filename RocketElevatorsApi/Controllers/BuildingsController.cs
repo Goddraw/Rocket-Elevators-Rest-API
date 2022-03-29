@@ -34,17 +34,36 @@ namespace RocketElevatorsApi.Controllers
         public async Task<ActionResult<IEnumerable<Building>>> GetBuildingsWithIntervention()
         {
             List<Building> allBuildings = await _context.buildings.ToListAsync();
+            List<Building> buildingsWithInterventions = new List<Building>();
             List<Battery> allBatteries = await _context.batteries.ToListAsync();
+            List<Column> allColumns = await _context.columns.ToListAsync();
             List<Elevator> allElevators = await _context.elevators.ToListAsync();
-            List<Columns> allColumns = await _context.columns.ToListAsync();
-            List<Elevator> buildingsWithInterventions = new List<Elevator>();
             
-            foreach (Building building in allBuildings) {
-                if (elevator.Status == "offline") {
-                    offlineElevators.Add(elevator);
+            foreach (Battery battery in allBatteries){
+                if (battery.status == "intervention"){
+                    var building = await _context.buildings.FindAsync(battery.building_id);
+                    buildingsWithInterventions.Add(building);
                 }
             }
-            return await _context.buildings.ToListAsync();
+
+            foreach (Column column in allColumns){
+                if (column.status == "intervention"){
+                    var battery = await _context.batteries.FindAsync(column.battery_id);
+                    var building = await _context.buildings.FindAsync(battery.building_id);
+                    buildingsWithInterventions.Add(building);
+                }
+            }
+
+             foreach (Elevator elevator in allElevators){
+                if (elevator.Status == "intervention"){
+                    var column = await _context.columns.FindAsync(elevator.column_id);
+                    var battery = await _context.batteries.FindAsync(column.battery_id);
+                    var building = await _context.buildings.FindAsync(battery.building_id);
+                    buildingsWithInterventions.Add(building);
+                }
+            }
+
+            return buildingsWithInterventions;
         }
 
 
