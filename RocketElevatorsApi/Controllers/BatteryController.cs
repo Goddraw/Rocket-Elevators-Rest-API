@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using RocketElevatorsApi.Models;
+using RocketElevatorsApi.Data;
 
 namespace RocketElevatorsApi.Controllers
 {
@@ -14,9 +15,9 @@ namespace RocketElevatorsApi.Controllers
     [ApiController]
     public class BatteryController : ControllerBase
     {
-        private readonly BatteryContext _context;
+        private readonly ApplicationDbContext _context;
 
-        public BatteryController(BatteryContext context)
+        public BatteryController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -25,14 +26,14 @@ namespace RocketElevatorsApi.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Battery>>> GetBattery()
         {
-            return await _context.Battery.ToListAsync();
+            return await _context.Batteries.ToListAsync();
         }
 
         // GET: api/Battery/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Battery>> GetBattery(long id)
         {
-            var battery = await _context.Battery.FindAsync(id);
+            var battery = await _context.Batteries.FindAsync(id);
 
             if (battery == null)
             {
@@ -78,7 +79,7 @@ namespace RocketElevatorsApi.Controllers
         [HttpPost]
         public async Task<ActionResult<Battery>> PostBattery(Battery battery)
         {
-            _context.Battery.Add(battery);
+            _context.Batteries.Add(battery);
             await _context.SaveChangesAsync();
 
             return CreatedAtAction("GetBattery", new { id = battery.Id }, battery);
@@ -88,13 +89,13 @@ namespace RocketElevatorsApi.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteBattery(long id)
         {
-            var battery = await _context.Battery.FindAsync(id);
+            var battery = await _context.Batteries.FindAsync(id);
             if (battery == null)
             {
                 return NotFound();
             }
 
-            _context.Battery.Remove(battery);
+            _context.Batteries.Remove(battery);
             await _context.SaveChangesAsync();
 
             return NoContent();
@@ -102,7 +103,7 @@ namespace RocketElevatorsApi.Controllers
 
         private bool BatteryExists(long id)
         {
-            return _context.Battery.Any(e => e.Id == id);
+            return _context.Batteries.Any(e => e.Id == id);
         }
     }
 }
