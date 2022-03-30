@@ -4,11 +4,15 @@ namespace RocketElevatorsApi.Models
     {
         public long Id { get; set; }
         public string? status { get; set; }
-        public DateTime? CommissioningDate {get; set;}
-        public DateTime? LastInspectionDate {get; set;}
-        public string? CertificateOfOperations { get; set; }
-        public string? Information { get; set; }
-        public string? Notes { get; set; }
+        public DateTime? date_of_commissioning {get; set;}
+        public DateTime? date_of_last_inspection {get; set;}
+        public string? certificate_of_operations { get; set; }
+        public string? information { get; set; }
+        public string? notes { get; set; }
+        public long? building_id {get; set;}
+        public long? employee_id {get; set;}
+
+
         
     }
 }
