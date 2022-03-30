@@ -52,7 +52,11 @@ namespace RocketElevatorsApi.Controllers
             List<Lead> potentialCustomers = new List<Lead>();
             List<Lead> recentLeads = new List<Lead>();
 
-// add a column in a table to match 2 tables. Foreign key between Leads and Customers
+            List<string> userEmails = new List<string>();
+            foreach (User user in allUsers){
+                userEmails.Add(user.email);
+            }
+
             List<long?> allCustomersUserId = new List<long?>();
             foreach (Customer customer in allCustomers){
                 allCustomersUserId.Add(customer.user_id);
@@ -68,64 +72,25 @@ namespace RocketElevatorsApi.Controllers
                     
                 }
             }
-
-            Console.WriteLine(recentLeads);
 
             List<String> recentLeadEmails = new List<String>();
             foreach(Lead lead in recentLeads){
                 recentLeadEmails.Add(lead.email);
             }
 
-            Console.WriteLine(recentLeadEmails);
-
-            foreach (User user in allUsers){
-                if (!recentLeadEmails.Contains(user.email)){
-                    var lead = await _context.leads.Collection(x => x.email == user.email).LoadAsync();
+            foreach(Lead lead in recentLeads){
+                if (!userEmails.Contains(lead.email)){
                     potentialCustomers.Add(lead);
-                    Console.WriteLine(lead);
                 } else {
+                    //check there is a matching user id in customers
+                    var user = await _context.users.FirstOrDefaultAsync(x => x.email == lead.email);
                     if (!allCustomersUserId.Contains(user.Id)){
-                        
-                        var lead = await _context.leads.Where(x => x.email == user.email).LoadAsync();
                         potentialCustomers.Add(lead);
                     }
                 }
             }
-
             return potentialCustomers;
         }
-
-         // GET: api/Leads. GET 30 last days non-customers lead
-        [HttpGet("recentleads")]
-        public async Task<ActionResult<IEnumerable<Lead>>> GetRecentLeads()
-        {
-            List<Lead> allLeads= await _context.leads.ToListAsync();
-            List<User> allUsers = await _context.users.ToListAsync();
-            List<Customer> allCustomers= await _context.customers.ToListAsync();
-            List<Lead> potentialCustomers = new List<Lead>();
-            List<Lead> recentLeads = new List<Lead>();
-
-// add a column in a table to match 2 tables. Foreign key between Leads and Customers
-            List<long?> allCustomersUserId = new List<long?>();
-            foreach (Customer customer in allCustomers){
-                allCustomersUserId.Add(customer.user_id);
-            }
-
-            foreach (Lead lead in allLeads)
-            {
-                DateTime today = DateTime.Now;
-                DateTime leadDate = lead.created_at;    
-                if ((today - leadDate).TotalDays < 50)
-                {
-                    recentLeads.Add(lead);
-                    
-                }
-            }
-
-            Console.WriteLine(recentLeads);
-            return recentLeads;
-        }
-
 
         // PUT: api/Leads/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
