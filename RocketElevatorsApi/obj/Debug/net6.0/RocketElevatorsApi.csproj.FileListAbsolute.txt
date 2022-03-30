@@ -264,8 +264,13 @@
 /Users/eileenai/Documents/codeboxx/odyssey/week7-restAPIs/Rocket-Elevators-Rest-API/RocketElevatorsApi/obj/Debug/net6.0/ref/RocketElevatorsApi.dll
 /Users/eileenai/Documents/codeboxx/odyssey/week7-restAPIs/Rocket-Elevators-Rest-API/RocketElevatorsApi/bin/Debug/net6.0/MySqlConnector.dll
 /Users/eileenai/Documents/codeboxx/odyssey/week7-restAPIs/Rocket-Elevators-Rest-API/RocketElevatorsApi/bin/Debug/net6.0/Pomelo.EntityFrameworkCore.MySql.dll
+/home/goddraw/odysseyweek7/Rocket-Elevators-Rest-API/RocketElevatorsApi/bin/Debug/net6.0/publish/web.config
 /home/goddraw/odysseyweek7/Rocket-Elevators-Rest-API/RocketElevatorsApi/bin/Debug/net6.0/appsettings.Development.json
 /home/goddraw/odysseyweek7/Rocket-Elevators-Rest-API/RocketElevatorsApi/bin/Debug/net6.0/appsettings.json
+/home/goddraw/odysseyweek7/Rocket-Elevators-Rest-API/RocketElevatorsApi/bin/Debug/net6.0/publish/appsettings.Development.json
+/home/goddraw/odysseyweek7/Rocket-Elevators-Rest-API/RocketElevatorsApi/bin/Debug/net6.0/publish/appsettings.json
+/home/goddraw/odysseyweek7/Rocket-Elevators-Rest-API/RocketElevatorsApi/bin/Debug/net6.0/publish/RocketElevatorsApi.deps.json
+/home/goddraw/odysseyweek7/Rocket-Elevators-Rest-API/RocketElevatorsApi/bin/Debug/net6.0/publish/RocketElevatorsApi.runtimeconfig.json
 /home/goddraw/odysseyweek7/Rocket-Elevators-Rest-API/RocketElevatorsApi/bin/Debug/net6.0/RocketElevatorsApi
 /home/goddraw/odysseyweek7/Rocket-Elevators-Rest-API/RocketElevatorsApi/bin/Debug/net6.0/RocketElevatorsApi.deps.json
 /home/goddraw/odysseyweek7/Rocket-Elevators-Rest-API/RocketElevatorsApi/bin/Debug/net6.0/RocketElevatorsApi.runtimeconfig.json
