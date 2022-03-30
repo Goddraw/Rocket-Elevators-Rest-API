@@ -42,58 +42,58 @@ namespace RocketElevatorsApi.Controllers
             return lead;
         }
 
-        // GET: api/Leads. GET 30 last days non-customers lead
-        [HttpGet("newleads")]
-        public async Task<ActionResult<IEnumerable<Lead>>> GetNewLeads()
-        {
-            List<Lead> allLeads= await _context.leads.ToListAsync();
-            List<User> allUsers = await _context.users.ToListAsync();
-            List<Customer> allCustomers= await _context.customers.ToListAsync();
-            List<Lead> potentialCustomers = new List<Lead>();
-            List<Lead> recentLeads = new List<Lead>();
+//         // GET: api/Leads. GET 30 last days non-customers lead
+//         [HttpGet("newleads")]
+//         public async Task<ActionResult<IEnumerable<Lead>>> GetNewLeads()
+//         {
+//             List<Lead> allLeads= await _context.leads.ToListAsync();
+//             List<User> allUsers = await _context.users.ToListAsync();
+//             List<Customer> allCustomers= await _context.customers.ToListAsync();
+//             List<Lead> potentialCustomers = new List<Lead>();
+//             List<Lead> recentLeads = new List<Lead>();
 
-// add a column in a table to match 2 tables. Foreign key between Leads and Customers
-            List<long?> allCustomersUserId = new List<long?>();
-            foreach (Customer customer in allCustomers){
-                allCustomersUserId.Add(customer.user_id);
-            }
+// // add a column in a table to match 2 tables. Foreign key between Leads and Customers
+//             List<long?> allCustomersUserId = new List<long?>();
+//             foreach (Customer customer in allCustomers){
+//                 allCustomersUserId.Add(customer.user_id);
+//             }
 
-            foreach (Lead lead in allLeads)
-            {
-                DateTime today = DateTime.Now;
-                DateTime leadDate = lead.created_at;    
-                if ((today - leadDate).TotalDays < 50)
-                {
-                    recentLeads.Add(lead);
+//             foreach (Lead lead in allLeads)
+//             {
+//                 DateTime today = DateTime.Now;
+//                 DateTime leadDate = lead.created_at;    
+//                 if ((today - leadDate).TotalDays < 50)
+//                 {
+//                     recentLeads.Add(lead);
                     
-                }
-            }
+//                 }
+//             }
 
-            Console.WriteLine(recentLeads);
+//             Console.WriteLine(recentLeads);
 
-            List<String> recentLeadEmails = new List<String>();
-            foreach(Lead lead in recentLeads){
-                recentLeadEmails.Add(lead.email);
-            }
+//             List<String> recentLeadEmails = new List<String>();
+//             foreach(Lead lead in recentLeads){
+//                 recentLeadEmails.Add(lead.email);
+//             }
 
-            Console.WriteLine(recentLeadEmails);
+//             Console.WriteLine(recentLeadEmails);
 
-            foreach (User user in allUsers){
-                if (!recentLeadEmails.Contains(user.email)){
-                    var lead = await _context.leads.Collection(x => x.email == user.email).LoadAsync();
-                    potentialCustomers.Add(lead);
-                    Console.WriteLine(lead);
-                } else {
-                    if (!allCustomersUserId.Contains(user.Id)){
+//             foreach (User user in allUsers){
+//                 if (!recentLeadEmails.Contains(user.email)){
+//                     var lead = await _context.leads.Collection(x => x.email == user.email).LoadAsync();
+//                     potentialCustomers.Add(lead);
+//                     Console.WriteLine(lead);
+//                 } else {
+//                     if (!allCustomersUserId.Contains(user.Id)){
                         
-                        var lead = await _context.leads.Where(x => x.email == user.email).LoadAsync();
-                        potentialCustomers.Add(lead);
-                    }
-                }
-            }
+//                         var lead = await _context.leads.Where(x => x.email == user.email).LoadAsync();
+//                         potentialCustomers.Add(lead);
+//                     }
+//                 }
+//             }
 
-            return potentialCustomers;
-        }
+//             return potentialCustomers;
+//         }
 
          // GET: api/Leads. GET 30 last days non-customers lead
         [HttpGet("recentleads")]
