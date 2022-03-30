@@ -85,6 +85,37 @@ namespace RocketElevatorsApi.Controllers
             return CreatedAtAction("GetColumn", new { id = column.Id }, column);
         }
 
+        // GET: api/columns/status/5
+        [HttpGet("status/{id}")]
+        public async Task<ActionResult<String>> GetColumnStatus(long id)
+        {
+            var column = await _context.columns.FindAsync(id);
+
+            if (column == null)
+            {
+                return NotFound();
+            }
+
+            return column.status;
+        }
+
+        // PUT: api/columns/Status/1?status=offline
+        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        [HttpPut("status/{id}")]
+        public async Task<ActionResult<Column>> ChangeColumnStatus(long id, string status)
+        {
+
+            var column = await _context.columns.FindAsync(id);
+            if (column == null)
+            {
+                return NotFound();
+            }            
+            column.status = status;
+            await _context.SaveChangesAsync();
+            return column;
+        }
+
+
         // DELETE: api/Columns/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteColumn(long id)
