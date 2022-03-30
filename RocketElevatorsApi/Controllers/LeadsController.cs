@@ -21,27 +21,6 @@ namespace RocketElevatorsApi.Controllers
             _context = context;
         }
 
-        // GET: api/Leads
-        [HttpGet]
-        public async Task<ActionResult<IEnumerable<Lead>>> Getleads()
-        {
-            return await _context.leads.ToListAsync();
-        }
-
-        // GET: api/Leads/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Lead>> GetLead(long id)
-        {
-            var lead = await _context.leads.FindAsync(id);
-
-            if (lead == null)
-            {
-                return NotFound();
-            }
-
-            return lead;
-        }
-
         // GET: api/Leads. GET 30 last days non-customers lead
         [HttpGet("newleads")]
         public async Task<ActionResult<IEnumerable<Lead>>> GetNewLeads()
@@ -90,64 +69,6 @@ namespace RocketElevatorsApi.Controllers
                 }
             }
             return potentialCustomers;
-        }
-
-        // PUT: api/Leads/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        public async Task<IActionResult> PutLead(long id, Lead lead)
-        {
-            if (id != lead.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(lead).State = EntityState.Modified;
-
-            try
-            {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!LeadExists(id))
-                {
-                    return NotFound();
-                }
-                else
-                {
-                    throw;
-                }
-            }
-
-            return NoContent();
-        }
-
-        // POST: api/Leads
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPost]
-        public async Task<ActionResult<Lead>> PostLead(Lead lead)
-        {
-            _context.leads.Add(lead);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction("GetLead", new { id = lead.Id }, lead);
-        }
-
-        // DELETE: api/Leads/5
-        [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteLead(long id)
-        {
-            var lead = await _context.leads.FindAsync(id);
-            if (lead == null)
-            {
-                return NotFound();
-            }
-
-            _context.leads.Remove(lead);
-            await _context.SaveChangesAsync();
-
-            return NoContent();
         }
 
         private bool LeadExists(long id)
