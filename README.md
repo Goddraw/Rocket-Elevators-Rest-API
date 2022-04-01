@@ -1,6 +1,6 @@
 # Rocket-Elevators-Rest-API
 
-This project includes following 9 Rest APIs to query the MYSQL database of Rocket Elevators. 9 APIs were deployed on https://rocketelevatorsapi.azurewebsites.net for public access.
+This repository includes following 9 Rest APIs to query the MYSQL database of Rocket Elevators. 9 APIs were deployed on https://rocketelevatorsapi.azurewebsites.net for public access.
 
 1. Retrieving the current status of a specific Battery
     * GET api/batteries/status/{id}
