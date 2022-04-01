@@ -21,6 +21,6 @@ This project includes following 9 Rest APIs to query the MYSQL database of Rocke
 9. Retrieving a list of Leads created in the last 30 days who have not yet become customers.
     GET api/leads/newleads
 
-Details of the API is in the documentations below. 
+Details of the API is in this documentation: https://documenter.getpostman.com/view/6936445/UVyrVx3M
 #### Please note when you do 'PUT' requests using curl commands, please also include '-d' in your command. For example: curl -d --location --request PUT 'https://rocketelevatorsapi.azurewebsites.net/api/columns/status/1?status=online'
-https://documenter.getpostman.com/view/6936445/UVyrVx3M
+
