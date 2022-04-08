@@ -18,6 +18,7 @@ namespace RocketElevatorsApi.Data
         public DbSet<Lead> leads { get; set; }
         public DbSet<User> users { get; set; }
         public DbSet<Customer> customers { get; set; }
+        public DbSet<Intervention> interventions { get; set; }
 
     }
 }
