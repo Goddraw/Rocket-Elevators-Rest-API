@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/goddraw/Rocket-Elevators-Rest-API/RocketElevatorsApi/RocketElevatorsApi.csproj": {}
+    "C:\\Users\\coolo\\desktop\\RESTAPI\\Rocket-Elevators-Rest-API\\RocketElevatorsApi\\RocketElevatorsApi.csproj": {}
   },
   "projects": {
-    "/home/goddraw/Rocket-Elevators-Rest-API/RocketElevatorsApi/RocketElevatorsApi.csproj": {
+    "C:\\Users\\coolo\\desktop\\RESTAPI\\Rocket-Elevators-Rest-API\\RocketElevatorsApi\\RocketElevatorsApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/goddraw/Rocket-Elevators-Rest-API/RocketElevatorsApi/RocketElevatorsApi.csproj",
+        "projectUniqueName": "C:\\Users\\coolo\\desktop\\RESTAPI\\Rocket-Elevators-Rest-API\\RocketElevatorsApi\\RocketElevatorsApi.csproj",
         "projectName": "RocketElevatorsApi",
-        "projectPath": "/home/goddraw/Rocket-Elevators-Rest-API/RocketElevatorsApi/RocketElevatorsApi.csproj",
-        "packagesPath": "/home/goddraw/.nuget/packages/",
-        "outputPath": "/home/goddraw/Rocket-Elevators-Rest-API/RocketElevatorsApi/obj/",
+        "projectPath": "C:\\Users\\coolo\\desktop\\RESTAPI\\Rocket-Elevators-Rest-API\\RocketElevatorsApi\\RocketElevatorsApi.csproj",
+        "packagesPath": "C:\\Users\\coolo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\coolo\\desktop\\RESTAPI\\Rocket-Elevators-Rest-API\\RocketElevatorsApi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/goddraw/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\coolo\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -83,7 +83,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
         }
       }
     }
