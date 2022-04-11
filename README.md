@@ -20,6 +20,12 @@ This repository includes following 9 Rest APIs to query the MYSQL database of Ro
     * GET api/buildings/intervention
 9. Retrieving a list of Leads created in the last 30 days who have not yet become customers.
     * GET api/leads/newleads
+10. Retrieving a list of interventions without a start date and with status "Pending"
+    * GET api/interventions/leads
+11. Changing the status of an intervention to InProgress and change the start of date time to the time this change was made.
+    * PUT api/interventions/status/{id}/inprogress
+12. Changing the status of an intervention to Completed and change the end of date time to the time this change was made.
+    * PUT api/interventions/status/{id}/completed
 
 Details of the API is in this documentation: https://documenter.getpostman.com/view/6936445/UVyrVx3M
 #### Please note when you do 'PUT' requests using curl commands, please also include '-d' in your command. For example: curl -d --location --request PUT 'https://rocketelevatorsapi.azurewebsites.net/api/columns/status/1?status=online'
